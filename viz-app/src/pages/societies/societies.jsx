@@ -1,4 +1,5 @@
-import data from '../../data/data.json'
+import data from '../../data/data.json';
+import NavBar from '../header/header';
 
 const Societies = () => {
     const stateSet = new Set();
@@ -42,9 +43,7 @@ const Societies = () => {
     
     return(
         <>
-
-
-
+            <NavBar/>
         </>
     )
 }
