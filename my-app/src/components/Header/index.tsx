@@ -38,12 +38,6 @@ const Header = ({ t }: any) => {
     };
     return (
       <>
-        <Link to="/">
-          <CustomNavLinkSmall>
-            <Span>{t("Home")}</Span>
-          </CustomNavLinkSmall>
-        </Link>
-
         <Link to="/societies">
           <CustomNavLinkSmall>
             <Span>{t("Societies")}</Span>
@@ -63,14 +57,15 @@ const Header = ({ t }: any) => {
           </Link>
 
 
-        <CustomNavLinkSmall
-          style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
-        >
-          <Span>
-            <Button>{t("Contact")}</Button>
-          </Span>
-        </CustomNavLinkSmall>
+        <Link to="/">
+          <CustomNavLinkSmall
+            style={{ width: "140px" }}
+          >
+            <Span>
+              <Button>{t("Home")}</Button>
+            </Span>
+          </CustomNavLinkSmall>
+        </Link>
       </>
     );
   };
