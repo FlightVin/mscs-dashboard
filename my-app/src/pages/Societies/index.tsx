@@ -1,54 +1,10 @@
-import Container from "../../common/Container";
-import ScrollToTop from "../../common/ScrollToTop";
-import data from "../../common/data.json";
+import {useEffect} from 'react';
+import Paths from '../path';
 
 const Societies = () => {
-    const stateSet = new Set();
-    const stateArray = new Array();
-    const districtSet = new Set();
-    const districtArray = new Array();
-    const sectorTypeSet = new Set();
-    const sectorTypeArray = new Array();
-    const areaSet = new Set();
-    const areaArray = new Array();
-
-    data.forEach(d => {
-        stateSet.add(d.state.toUpperCase());
-        districtSet.add(d.district.toUpperCase());
-        sectorTypeSet.add(d.sector.toUpperCase());
-
-        d.area.split(",").map(word => word.trim()).forEach(w => {
-            areaSet.add(w.toUpperCase());
-        })
-    })
-
-    stateSet.forEach(d => {
-        stateArray.push(d);
-    })
-    stateArray.sort();
-
-    districtSet.forEach(d => {
-        districtArray.push(d);
-    })
-    districtArray.sort();
-
-    sectorTypeSet.forEach(d => {
-        sectorTypeArray.push(d);
-    })
-    sectorTypeArray.sort();
-
-    areaSet.forEach(d => {
-        areaArray.push(d);
-    })
-    areaArray.sort();
-
-    return(
-        <Container>
-            <ScrollToTop/>
-
-
-        </Container>
-    );
+    useEffect(() => {
+        window.location.replace(Paths.base+"/societies");
+    }, []);
 }
 
 export default Societies;
