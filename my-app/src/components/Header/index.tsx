@@ -15,6 +15,7 @@ import {
   Outline,
   Span,
 } from "./styles";
+import { Link } from 'react-router-dom';
 
 const Header = ({ t }: any) => {
   const [visible, setVisibility] = useState(false);
@@ -37,15 +38,31 @@ const Header = ({ t }: any) => {
     };
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("About")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
-        </CustomNavLinkSmall>
+        <Link to="/">
+          <CustomNavLinkSmall>
+            <Span>{t("Home")}</Span>
+          </CustomNavLinkSmall>
+        </Link>
+
+        <Link to="/societies">
+          <CustomNavLinkSmall>
+            <Span>{t("Societies")}</Span>
+          </CustomNavLinkSmall>
+        </Link>
+
+        <Link to="/viz">
+          <CustomNavLinkSmall>
+            <Span>{t("Visualizations")}</Span>
+          </CustomNavLinkSmall>
+        </Link>
+
+        <Link to="/">
+          <CustomNavLinkSmall>
+            <Span>{t("Login")}</Span>
+          </CustomNavLinkSmall>
+          </Link>
+
+
         <CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}
@@ -63,7 +80,7 @@ const Header = ({ t }: any) => {
       <Container>
         <Row justify="space-between">
           <LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" width="101px" height="64px" />
+            <img src="img/icons/MSCS_LOGO.png" width="100px" height="100px" />
           </LogoContainer>
           <NotHidden>
             <MenuItem />

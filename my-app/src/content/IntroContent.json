@@ -1,10 +1,7 @@
 {
-  "title": "Landing page template for developers & startups",
-  "text": "Beautifully designed templates using React.js, ant design and styled-components! Save weeks of time and build your landing page in minutes.",
+  "title": "Multi State Cooperative Societies ACT, 2002",
+  "text": "An Act to consolidate and amend the law relating to co-operative societies, with objects not confined to one State and serving the interests of members in more than one State, to facilitate the voluntary formation and democratic functioning of co-operatives as people's institutions based on self-help and mutual aid.",
   "button": [
-    {
-      "title": "Explore"
-    },
     {
       "title": "Learn more",
       "color": "#fff"
