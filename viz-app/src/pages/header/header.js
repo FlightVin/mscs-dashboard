@@ -33,10 +33,10 @@ export default function NavBar() {
 
         <Card className="z-50 fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
             <div onClick={() => setSidenarOpen(a => !a)} className="fixed top-4 left-4 h-10 w-16 p-4 pt-6 items-center justify-center hover:cursor-pointer">
-                <img src="images/side.svg" width="80%"/>
+                <img src="/images/side.svg" width="80%"/>
             </div>
             <div className="mb-2 p-4 flex items-center justify-center">
-                <Link to="/"> <img src="images/MSCS_LOGO.png" width="100px" height="100px" /></Link>
+                <Link to="/"> <img src="/images/MSCS_LOGO.png" width="100px" height="100px" /></Link>
             </div>
             <List>
                 <Link to="/societies">
@@ -68,16 +68,7 @@ export default function NavBar() {
                     </AccordionHeader>
                 </ListItem>
                 <AccordionBody className="py-1">
-                    <List className="p-0">
-                        <Link to="/viz/reg">
-                            <ListItem>
-                                <ListItemPrefix>
-                                <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                </ListItemPrefix>
-                                Registration Trends
-                            </ListItem>
-                        </Link>
-                        
+                    <List className="p-0">                       
                         <Link to="/viz/sec">
                             <ListItem>
                                 <ListItemPrefix>
@@ -113,6 +104,15 @@ export default function NavBar() {
                                 Districts in States
                             </ListItem>
                         </Link>
+
+                        <Link to="/viz/reg">
+                            <ListItem>
+                                <ListItemPrefix>
+                                <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                Registration Trends
+                            </ListItem>
+                        </Link>
                     </List>
                 </AccordionBody>
                 </Accordion>
@@ -132,7 +132,7 @@ export default function NavBar() {
         </Card>
         :
         <Card onClick={() => setSidenarOpen(a => !a)} className="shadow-zinc-400 z-50 fixed top-4 left-4 h-10 w-16 p-4 pt-9 shadow-xl hover:shadow-lg flex items-center justify-center hover:cursor-pointer">
-            <img src="images/side.svg" width="80%"/>
+            <img src="/images/side.svg" width="80%"/>
         </Card>
   );
 }

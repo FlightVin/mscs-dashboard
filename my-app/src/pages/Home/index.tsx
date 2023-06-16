@@ -27,7 +27,7 @@ const Home = () => {
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon="img/icons/MSCS_LOGO.png"
+        icon="/img/icons/MSCS_LOGO.png"
         id="intro"
       />
       <MiddleBlock
@@ -41,7 +41,7 @@ const Home = () => {
         title={AboutContent.title}
         content={AboutContent.text}
         section={AboutContent.section}
-        icon="img/icons/emb.png"
+        icon="/img/icons/emb.png"
         id="about"
       />
       {/* <ContentBlock

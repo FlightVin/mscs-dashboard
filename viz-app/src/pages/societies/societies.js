@@ -22,7 +22,6 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 import data from '../../data/data.json';
-import NavBar from '../header/header';
 import Loader from '../loader/loader';
 
 const capitalize = (mySentence) => {
@@ -35,7 +34,7 @@ const capitalize = (mySentence) => {
     return words.join(" ");;
 }
 
-const Societies = () => {
+export default function Societies() {
     const [tableData, setTableData] = React.useState([]);
     const [curTableData, setCurTableData] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
@@ -721,5 +720,3 @@ const Societies = () => {
         </>
     )
 }
-
-export default Societies;

@@ -157,7 +157,7 @@ const Footer = ({ t }: any) => {
               />
               <a href="https://www.india.gov.in/">
                 <img
-                  src="img/icons/Digital.png"
+                  src="/img/icons/Digital.png"
                   alt="Digital India"
                 />
               </a>

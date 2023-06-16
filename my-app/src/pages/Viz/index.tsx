@@ -3,7 +3,7 @@ import Paths from '../path';
 
 const Viz = () => {
     useEffect(() => {
-        window.location.replace(Paths.base+"/viz/reg");
+        window.location.replace(Paths.base+"/viz/sec");
     }, []);
 }
 
