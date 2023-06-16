@@ -16,6 +16,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import SummarizeIcon from '@mui/icons-material/Summarize';
 import { Link } from "react-router-dom";
  
 export default function NavBar() {
@@ -30,9 +31,9 @@ export default function NavBar() {
   return (
     sidebarOpen ? 
 
-        <Card className="fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
-            <div className="fixed top-4 left-4 h-10 w-16 p-4 pt-6 items-center justify-center hover:cursor-pointer">
-                <img src="images/side.svg" width="80%" onClick={() => setSidenarOpen(a => !a)}/>
+        <Card className="z-50 fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+            <div onClick={() => setSidenarOpen(a => !a)} className="fixed top-4 left-4 h-10 w-16 p-4 pt-6 items-center justify-center hover:cursor-pointer">
+                <img src="images/side.svg" width="80%"/>
             </div>
             <div className="mb-2 p-4 flex items-center justify-center">
                 <Link to="/"> <img src="images/MSCS_LOGO.png" width="100px" height="100px" /></Link>
@@ -68,24 +69,50 @@ export default function NavBar() {
                 </ListItem>
                 <AccordionBody className="py-1">
                     <List className="p-0">
-                    <ListItem>
-                        <ListItemPrefix>
-                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                        </ListItemPrefix>
-                        Analytics
-                    </ListItem>
-                    <ListItem>
-                        <ListItemPrefix>
-                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                        </ListItemPrefix>
-                        Reporting
-                    </ListItem>
-                    <ListItem>
-                        <ListItemPrefix>
-                        <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                        </ListItemPrefix>
-                        Projects
-                    </ListItem>
+                        <Link to="/viz/reg">
+                            <ListItem>
+                                <ListItemPrefix>
+                                <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                Registration Trends
+                            </ListItem>
+                        </Link>
+                        
+                        <Link to="/viz/sec">
+                            <ListItem>
+                                <ListItemPrefix>
+                                <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                Sectors in States
+                            </ListItem>
+                        </Link>
+
+                        <Link to="/viz/stat">
+                            <ListItem>
+                                <ListItemPrefix>
+                                <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                Statistics per State
+                            </ListItem>
+                        </Link>
+
+                        <Link to="/viz/area">
+                            <ListItem>
+                                <ListItemPrefix>
+                                <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                Operation Areas and Sectors
+                            </ListItem>
+                        </Link>
+
+                        <Link to="/viz/dist">
+                            <ListItem>
+                                <ListItemPrefix>
+                                <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                Districts in States
+                            </ListItem>
+                        </Link>
                     </List>
                 </AccordionBody>
                 </Accordion>
@@ -104,8 +131,8 @@ export default function NavBar() {
             </List>
         </Card>
         :
-        <Card className="fixed top-4 left-4 h-10 w-16 p-4 pt-9 shadow-xl shadow-blue-gray-900/5 flex items-center justify-center hover:cursor-pointer">
-            <img src="images/side.svg" width="80%" onClick={() => setSidenarOpen(a => !a)}/>
+        <Card onClick={() => setSidenarOpen(a => !a)} className="shadow-zinc-400 z-50 fixed top-4 left-4 h-10 w-16 p-4 pt-9 shadow-xl hover:shadow-lg flex items-center justify-center hover:cursor-pointer">
+            <img src="images/side.svg" width="80%"/>
         </Card>
   );
 }

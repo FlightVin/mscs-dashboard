@@ -10,6 +10,7 @@ import {
   ContentWrapper,
   ButtonWrapper,
 } from "./styles";
+import { useHistory } from "react-router-dom";
 
 const RightBlock = ({
   title,
@@ -19,11 +20,16 @@ const RightBlock = ({
   t,
   id,
 }: ContentBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
+  const history = useHistory();
+  const scrollTo = (dir: string) => {
+    const element = document.getElementById(dir) as HTMLDivElement;
+    if (element) {
+      element.scrollIntoView({
       behavior: "smooth",
     });
+    } else {
+      history.push(t(id));
+    } 
   };
   return (
     <RightBlockContainer>
