@@ -21,7 +21,7 @@ export const NavLink = styled("div")`
 `;
 
 export const CustomNavLink = styled("div")`
-  width: 203px;
+  width: 150px;
   display: inline-block;
 
   @media only screen and (max-width: 411px) {

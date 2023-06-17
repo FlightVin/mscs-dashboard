@@ -10,6 +10,8 @@ import Trends from './pages/viz/trends';
 import NavBar from './pages/header/header';
 import Base from './pages/viz/base';
 import SectorsInStates from './pages/viz/sec';
+import Statistics from './pages/viz/stat';
+import Areas from './pages/viz/oper';
 
 function App() {
   return (
@@ -31,6 +33,18 @@ function App() {
         <Route path="/viz/sec" element={<>
           <NavBar />
           <SectorsInStates />
+        </>
+        } />
+
+        <Route path="/viz/stat" element={<>
+          <NavBar />
+          <Statistics />
+        </>
+        } />
+
+        <Route path="/viz/area" element={<>
+          <NavBar />
+          <Areas />
         </>
         } />
 

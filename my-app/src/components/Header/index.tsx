@@ -38,32 +38,54 @@ const Header = ({ t }: any) => {
     };
     return (
       <>
-        <Link to="/societies">
+
+        <Link to="/">
+          <CustomNavLinkSmall
+          >
+            <Span>
+              {t("Home")}
+            </Span>
+          </CustomNavLinkSmall>
+        </Link>
+
+
+        <a href="https://mscs.dac.gov.in/MSCS/MobileLogin.aspx">
           <CustomNavLinkSmall>
-            <Span>{t("Societies")}</Span>
+            <Span>{t("Login")}</Span>
+          </CustomNavLinkSmall>
+          </a>
+
+          <a href="https://mscs.dac.gov.in/Form1.aspx">
+          <CustomNavLinkSmall>
+            <Span>{t("Forms")}</Span>
+          </CustomNavLinkSmall>
+          </a>
+
+          <a href="https://mscs.dac.gov.in/BankList.aspx">
+          <CustomNavLinkSmall>
+            <Span>{t("Banks")}</Span>
+          </CustomNavLinkSmall>
+          </a>
+
+          <Link to="/societies">
+          <CustomNavLinkSmall
+            style={{
+              minWidth:'140px'
+            }}
+          >
+            <Span>
+              <Button>{t("Societies")}</Button></Span>
           </CustomNavLinkSmall>
         </Link>
 
         <Link to="/viz">
-          <CustomNavLinkSmall>
-            <Span>{t("Visualizations")}</Span>
-          </CustomNavLinkSmall>
-        </Link>
-
-        <Link to="/">
-          <CustomNavLinkSmall>
-            <Span>{t("Login")}</Span>
-          </CustomNavLinkSmall>
-          </Link>
-
-
-        <Link to="/">
           <CustomNavLinkSmall
-            style={{ width: "140px" }}
+            style={{
+              minWidth:'140px'
+            }}
           >
             <Span>
-              <Button>{t("Home")}</Button>
-            </Span>
+              <Button>{t("Visualizations")}</Button></Span>
           </CustomNavLinkSmall>
         </Link>
       </>

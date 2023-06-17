@@ -78,15 +78,6 @@ export default function NavBar() {
                             </ListItem>
                         </Link>
 
-                        <Link to="/viz/stat">
-                            <ListItem>
-                                <ListItemPrefix>
-                                <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                                </ListItemPrefix>
-                                Statistics per State
-                            </ListItem>
-                        </Link>
-
                         <Link to="/viz/area">
                             <ListItem>
                                 <ListItemPrefix>
@@ -96,12 +87,12 @@ export default function NavBar() {
                             </ListItem>
                         </Link>
 
-                        <Link to="/viz/dist">
+                        <Link to="/viz/stat">
                             <ListItem>
                                 <ListItemPrefix>
                                 <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                                 </ListItemPrefix>
-                                Districts in States
+                                State Statistics
                             </ListItem>
                         </Link>
 

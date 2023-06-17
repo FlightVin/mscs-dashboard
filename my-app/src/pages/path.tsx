@@ -1,5 +1,5 @@
 const Paths = {
-    "base": "http://localhost:3001"
+    "base": "https://vineeth-mscs-viz.netlify.app"
 }
 
 export default Paths;

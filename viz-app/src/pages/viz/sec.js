@@ -41,7 +41,8 @@ import Loader from '../loader/loader';
           },
         };
 
-// Inspiration from Observable, Inc.
+        // Copyright 2021 Observable, Inc.
+        // Released under the ISC license.
 function SankeyChart({
     nodes,
     links 
@@ -208,6 +209,8 @@ export default function SectorsInStates(){
         setVizValue(value);
         if (value === 1){
             setStateFilter([states[0], states[1], states[2], states[3]])
+        } else {
+            setStateFilter(states);
         }
     }
 
@@ -401,7 +404,7 @@ export default function SectorsInStates(){
             nodeGroup: d => d.id,
             nodeAlign:'justify', 
             linkColor:'source', 
-            format: (f => d => `${f(d)} Occurances`)(d3.format(",.1~f")),
+            format: (f => d => `${f(d)} Societies`)(d3.format(",.1~f")),
             width:Math.min(screenSize.width*0.8, 1300),
             height:Math.min(screenSize.height*0.8, 900),
             });
@@ -599,7 +602,7 @@ export default function SectorsInStates(){
 
     const bigScreenFilters = () => {
         return (
-<div className="filter-div mt-10 flex items-center justify-center flex-row">                   
+<div className="filter-div mt-4 flex items-center justify-center flex-row">                   
                     <div className='ml-10 flex items-center justify-center flex-row'>
                         <FormControl sx={{ m: 1, width: 200 }} size="small">
                             <InputLabel id="demo-multiple-checkbox-label">States</InputLabel>
@@ -671,7 +674,7 @@ export default function SectorsInStates(){
 
     const smallScreenFilters = () => {
         return (
-            <div className='flex items-center mt-4 justify-center flex-col' >
+            <div className='flex items-center justify-center flex-col' >
             <Accordion>
             <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
@@ -774,17 +777,30 @@ export default function SectorsInStates(){
             <div className="flex items-center justify-center pt-5 flex-col">
                 <Tabs value={vizValue} onChange={handleVizToggle} aria-label="disabled tabs example">
                 { screenSize.width>=minScreenSanky?
-                    <Tab label="Sanky Chart" />
+                    <Tab label="Sankey Chart" />
                 :
-                    <Tab label="Sanky Chart" disabled/>
+                    <Tab label="Sankey Chart" disabled/>
                 }
                 <Tab label="Bar CHart" />
-                </Tabs>
+                </Tabs>               
             </div>
-            
+
             {screenSize.width>=900 ? bigScreenFilters(): smallScreenFilters()}
 
-            <div id="chart-div" className="flex items-center justify-center pt-5 flex-co mb-10">
+            <div className="flex items-center justify-center align-center flex-col text-l mt-1">
+                    <div className='flex flex items-center justify-center flex-col'>
+                        <div className="text-cyan-950 text-sm">
+                            See drop down list for other visualizations. 
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <p className='text-center'>
+                            Two visualizations to help in undertanding the distribution of sector types over states. Hover over the ribbons for additional information.
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+            <div id="chart-div" className="flex items-center justify-center mt-4 flex-co mb-10">
 
             </div>
         </>

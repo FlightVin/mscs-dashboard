@@ -102,6 +102,12 @@ export default function Societies() {
         const areaSet = new Set();
         const areaArray = new Array();
 
+        const strToDate = (dateStr) => {
+            const [month, day, year] = dateStr.split('/');
+            const dateObject = new Date(year, month - 1, day);
+            return dateObject;
+        }
+
         data.forEach(d => {
             stateSet.add(capitalize(d.state));
             districtSet.add(capitalize(d.district));
@@ -122,6 +128,7 @@ export default function Societies() {
                     "sector": capitalize(d.sector),
                     "date": d.date,
                     "area": capitalize(d.area),
+                    "fdate": strToDate(d.date),
                 }
             ])
             setCurTableData(oldArray => [
@@ -135,6 +142,7 @@ export default function Societies() {
                     "sector": capitalize(d.sector),
                     "date": d.date,
                     "area": capitalize(d.area),
+                    "fdate": strToDate(d.date),
                 }
             ])
         })
@@ -243,22 +251,30 @@ export default function Societies() {
         })
 
         if (sortCriteria.attribute){
-            // console.log(sortCriteria.attribute, sortCriteria.order)
+            console.log(sortCriteria.attribute, sortCriteria.order)
             filteredData.sort((a, b) => {
-                const firstEle = a[sortCriteria.attribute].toLowerCase();
-                const secondEle = b[sortCriteria.attribute].toLowerCase();
-
-                // console.log(firstEle, secondEle);
-
-                if (firstEle > secondEle){
-                    return sortCriteria.order;
-                }
-
-                if (secondEle > firstEle){
-                    return -sortCriteria.order;
-                }
                 
-                return 0;
+                if (sortCriteria.attribute === 'fdate'){
+                    const firstEle = a[sortCriteria.attribute]
+                    const secondEle = b[sortCriteria.attribute]
+
+                    return sortCriteria.order*(firstEle - secondEle);
+                } else {
+                    const firstEle = a[sortCriteria.attribute].toLowerCase();
+                    const secondEle = b[sortCriteria.attribute].toLowerCase();
+
+                    // console.log(firstEle, secondEle);
+
+                    if (firstEle > secondEle){
+                        return sortCriteria.order;
+                    }
+
+                    if (secondEle > firstEle){
+                        return -sortCriteria.order;
+                    }
+                    
+                    return 0;
+                }
             })
         }
 
@@ -413,6 +429,7 @@ export default function Societies() {
                                                 <MenuItem value={"name"}>Society Name</MenuItem>
                                                 <MenuItem value={"state"}>States</MenuItem>
                                                 <MenuItem value={"district"}>District</MenuItem>
+                                                <MenuItem value={"fdate"}>Date of Registration</MenuItem>
                                             </Select>
                                     </FormControl>
                                     
@@ -484,22 +501,30 @@ export default function Societies() {
         })
 
         if (sortCriteria.attribute){
-            // console.log(sortCriteria.attribute, sortCriteria.order)
+            console.log(sortCriteria.attribute, sortCriteria.order)
             filteredData.sort((a, b) => {
-                const firstEle = a[sortCriteria.attribute].toLowerCase();
-                const secondEle = b[sortCriteria.attribute].toLowerCase();
-
-                // console.log(firstEle, secondEle);
-
-                if (firstEle > secondEle){
-                    return sortCriteria.order;
-                }
-
-                if (secondEle > firstEle){
-                    return -sortCriteria.order;
-                }
                 
-                return 0;
+                if (sortCriteria.attribute === 'fdate'){
+                    const firstEle = a[sortCriteria.attribute]
+                    const secondEle = b[sortCriteria.attribute]
+
+                    return sortCriteria.order*(firstEle - secondEle);
+                } else {
+                    const firstEle = a[sortCriteria.attribute].toLowerCase();
+                    const secondEle = b[sortCriteria.attribute].toLowerCase();
+
+                    // console.log(firstEle, secondEle);
+
+                    if (firstEle > secondEle){
+                        return sortCriteria.order;
+                    }
+
+                    if (secondEle > firstEle){
+                        return -sortCriteria.order;
+                    }
+                    
+                    return 0;
+                }
             })
         }
 
@@ -645,8 +670,7 @@ export default function Societies() {
                                         <MenuItem value={"name"}>Society Name</MenuItem>
                                         <MenuItem value={"state"}>States</MenuItem>
                                         <MenuItem value={"district"}>District</MenuItem>
-                                        {/* <MenuItem value={"date"}>Date of Registration</MenuItem> */}
-                                    </Select>
+                                        <MenuItem value={"fdate"}>Date of Registration</MenuItem>                                    </Select>
                             </FormControl>
                             
                     </div>
@@ -713,6 +737,19 @@ export default function Societies() {
                 <div className='md:mt-0 mt-5'>
                     <span className="text-2xl font-extrabold md:text-3xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r to-red-600 from-cyan-400">Societies</span>
                 </div>
+
+                <div className="flex items-center justify-center align-center mt-1 flex-col text-l">
+                    <div className='flex flex items-center justify-center flex-col'>
+                        <div className="text-cyan-950 text-sm">
+                            See drop down list for other visualizations. 
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <p className='text-center'>
+                            View all societies with filters, sorts and search. Touch a society to expand.
+                            </p>
+                        </div>
+                    </div>
+            </div>
 
                 {screenSize.width>=1100 ? bigScreenAcc(): smallScreenAcc()}
 
