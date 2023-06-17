@@ -10,7 +10,7 @@ Deployes on _Netlify_ - https://vineeth-mscs.netlify.app/
 
 ## Report
 
-Please refer to _vineeth-report.pdf_ -
+Please refer to _vineeth-report.pdf_ - https://github.com/FlightVin/mscs-dashboard/blob/main/vineeth-report.pdf
 
 ## Credits
 
