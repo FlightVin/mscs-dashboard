@@ -6,7 +6,7 @@ Made by _Vineeth Bhat_ for the hackathon - https://drive.google.com/file/d/115Dr
 
 ## Deployment
 
-Deployes on _Netlify_ - https://vineeth-mscs.netlify.app/
+Deployed on _Netlify_ - https://vineeth-mscs.netlify.app/
 
 ## Report
 
